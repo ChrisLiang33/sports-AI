@@ -1,6 +1,8 @@
 ideas:
 
-using live data from draftkings.com
+using live data from draftkings.com scrape it
+
+user interface
 
 with our algorithms, we want a percentage of it happening. like 65%
 
