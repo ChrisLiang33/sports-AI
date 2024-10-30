@@ -1,0 +1,16 @@
+[
+  {
+    "home_team": "Washington Wizards",
+    "away_team": "Atlanta Hawks",
+    "points": [
+      {
+        "team": "Atlanta Hawks",
+        "point": -5.0
+      },
+      {
+        "team": "Washington Wizards",
+        "point": 5.0
+      }
+    ]
+  }
+]

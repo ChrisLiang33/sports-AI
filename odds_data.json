@@ -1,0 +1,156 @@
+[
+    {
+        "home_team": "Washington Wizards",
+        "away_team": "Atlanta Hawks",
+        "points": [
+            {
+                "team": "Atlanta Hawks",
+                "point": -5.0
+            },
+            {
+                "team": "Washington Wizards",
+                "point": 5.0
+            }
+        ]
+    },
+    {
+        "home_team": "Indiana Pacers",
+        "away_team": "Boston Celtics",
+        "points": [
+            {
+                "team": "Boston Celtics",
+                "point": -6.0
+            },
+            {
+                "team": "Indiana Pacers",
+                "point": 6.0
+            }
+        ]
+    },
+    {
+        "home_team": "Charlotte Hornets",
+        "away_team": "Toronto Raptors",
+        "points": [
+            {
+                "team": "Charlotte Hornets",
+                "point": -6.0
+            },
+            {
+                "team": "Toronto Raptors",
+                "point": 6.0
+            }
+        ]
+    },
+    {
+        "home_team": "Cleveland Cavaliers",
+        "away_team": "Los Angeles Lakers",
+        "points": [
+            {
+                "team": "Cleveland Cavaliers",
+                "point": -4.5
+            },
+            {
+                "team": "Los Angeles Lakers",
+                "point": 4.5
+            }
+        ]
+    },
+    {
+        "home_team": "Philadelphia 76ers",
+        "away_team": "Detroit Pistons",
+        "points": [
+            {
+                "team": "Detroit Pistons",
+                "point": 4.0
+            },
+            {
+                "team": "Philadelphia 76ers",
+                "point": -4.0
+            }
+        ]
+    },
+    {
+        "home_team": "Miami Heat",
+        "away_team": "New York Knicks",
+        "points": [
+            {
+                "team": "Miami Heat",
+                "point": 1.5
+            },
+            {
+                "team": "New York Knicks",
+                "point": -1.5
+            }
+        ]
+    },
+    {
+        "home_team": "Memphis Grizzlies",
+        "away_team": "Brooklyn Nets",
+        "points": [
+            {
+                "team": "Brooklyn Nets",
+                "point": 11.5
+            },
+            {
+                "team": "Memphis Grizzlies",
+                "point": -11.5
+            }
+        ]
+    },
+    {
+        "home_team": "Chicago Bulls",
+        "away_team": "Orlando Magic",
+        "points": [
+            {
+                "team": "Chicago Bulls",
+                "point": 5.5
+            },
+            {
+                "team": "Orlando Magic",
+                "point": -5.5
+            }
+        ]
+    },
+    {
+        "home_team": "Oklahoma City Thunder",
+        "away_team": "San Antonio Spurs",
+        "points": [
+            {
+                "team": "Oklahoma City Thunder",
+                "point": -12.0
+            },
+            {
+                "team": "San Antonio Spurs",
+                "point": 12.0
+            }
+        ]
+    },
+    {
+        "home_team": "Golden State Warriors",
+        "away_team": "New Orleans Pelicans",
+        "points": [
+            {
+                "team": "Golden State Warriors",
+                "point": -3.5
+            },
+            {
+                "team": "New Orleans Pelicans",
+                "point": 3.5
+            }
+        ]
+    },
+    {
+        "home_team": "Los Angeles Clippers",
+        "away_team": "Portland Trail Blazers",
+        "points": [
+            {
+                "team": "Los Angeles Clippers",
+                "point": -8.0
+            },
+            {
+                "team": "Portland Trail Blazers",
+                "point": 8.0
+            }
+        ]
+    }
+]

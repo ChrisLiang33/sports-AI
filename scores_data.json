@@ -1,0 +1,58 @@
+[
+    {
+        "home_team": "Minnesota Timberwolves",
+        "away_team": "Dallas Mavericks",
+        "scores": [
+            {
+                "name": "Minnesota Timberwolves",
+                "score": "114"
+            },
+            {
+                "name": "Dallas Mavericks",
+                "score": "120"
+            }
+        ]
+    },
+    {
+        "home_team": "Brooklyn Nets",
+        "away_team": "Denver Nuggets",
+        "scores": [
+            {
+                "name": "Brooklyn Nets",
+                "score": "139"
+            },
+            {
+                "name": "Denver Nuggets",
+                "score": "144"
+            }
+        ]
+    },
+    {
+        "home_team": "Utah Jazz",
+        "away_team": "Sacramento Kings",
+        "scores": [
+            {
+                "name": "Utah Jazz",
+                "score": "96"
+            },
+            {
+                "name": "Sacramento Kings",
+                "score": "113"
+            }
+        ]
+    },
+    {
+        "home_team": "Golden State Warriors",
+        "away_team": "New Orleans Pelicans",
+        "scores": [
+            {
+                "name": "Golden State Warriors",
+                "score": "124"
+            },
+            {
+                "name": "New Orleans Pelicans",
+                "score": "106"
+            }
+        ]
+    }
+]
