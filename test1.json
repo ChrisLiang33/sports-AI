@@ -12,5 +12,19 @@
         "point": 5.0
       }
     ]
+  },
+  {
+    "home_team": "Indiana Pacers",
+    "away_team": "Boston Celtics",
+    "points": [
+      {
+        "team": "Boston Celtics",
+        "point": -6.0
+      },
+      {
+        "team": "Indiana Pacers",
+        "point": 6.0
+      }
+    ]
   }
 ]

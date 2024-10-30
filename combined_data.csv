@@ -1,2 +1,5 @@
-home_team,away_team,home_score,away_score,home_point,away_point,home_covered,away_covered
-Washington Wizards,Atlanta Hawks,114,120,5.0,-5.0,0,1
+team,score,covered
+Washington Wizards,114,0
+Atlanta Hawks,120,1
+Indiana Pacers,139,1
+Boston Celtics,144,0
