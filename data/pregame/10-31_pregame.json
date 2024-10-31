@@ -1,0 +1,58 @@
+[
+    {
+        "home_team": "Memphis Grizzlies",
+        "away_team": "Milwaukee Bucks",
+        "spread": [
+            {
+                "team": "Memphis Grizzlies",
+                "spread": 6.0
+            },
+            {
+                "team": "Milwaukee Bucks",
+                "spread": -6.0
+            }
+        ]
+    },
+    {
+        "home_team": "Dallas Mavericks",
+        "away_team": "Houston Rockets",
+        "spread": [
+            {
+                "team": "Dallas Mavericks",
+                "spread": -6.5
+            },
+            {
+                "team": "Houston Rockets",
+                "spread": 6.5
+            }
+        ]
+    },
+    {
+        "home_team": "Utah Jazz",
+        "away_team": "San Antonio Spurs",
+        "spread": [
+            {
+                "team": "San Antonio Spurs",
+                "spread": -1.0
+            },
+            {
+                "team": "Utah Jazz",
+                "spread": 1.0
+            }
+        ]
+    },
+    {
+        "home_team": "Los Angeles Clippers",
+        "away_team": "Phoenix Suns",
+        "spread": [
+            {
+                "team": "Los Angeles Clippers",
+                "spread": 4.5
+            },
+            {
+                "team": "Phoenix Suns",
+                "spread": -4.5
+            }
+        ]
+    }
+]

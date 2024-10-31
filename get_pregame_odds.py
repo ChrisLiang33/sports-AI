@@ -2,12 +2,14 @@ import requests
 from dotenv import load_dotenv
 import os
 import json
+from datetime import datetime
 
 load_dotenv()
-
 api_key = os.getenv("API_KEY")
-url = 'https://api.the-odds-api.com/v4/sports/basketball_nba/odds/'
 
+print("System-level API Key:", os.environ.get("API_KEY"))
+
+url = 'https://api.the-odds-api.com/v4/sports/basketball_nba/odds/'
 params = {
     'apiKey': api_key,
     'markets': 'spreads',
@@ -26,26 +28,28 @@ if response.status_code == 200:
                 filtered_event = {
                     "home_team": event["home_team"],
                     "away_team": event["away_team"],
-                    "points": []  
+                    "spread": []  # Change 'points' to 'spread'
                 }
-
                 for market in bookmaker.get("markets", []):
                     if market["key"] == "spreads":
                         for outcome in market.get("outcomes", []):
-                            filtered_event["points"].append({
+                            filtered_event["spread"].append({  # Change 'points' to 'spread'
                                 "team": outcome["name"],
-                                "point": outcome["point"],
+                                "spread": outcome["point"],  # Change 'point' to 'spread'
                             })
 
-                if filtered_event["points"]:
+                if filtered_event["spread"]:  # Check if 'spread' is populated
                     fanduel_odds.append(filtered_event)
 
-    with open("odds_data.json", "w") as file:
+    date_str = datetime.now().strftime("%m-%d")
+    output_file_path = f'data/pregame/{date_str}_pregame.json'  
+
+    with open(output_file_path, "w") as file:
         json.dump(fanduel_odds, file, indent=4)
 
     for key, value in response.headers.items():
         print(f"{key}: {value}")
-
-    print(f"Data successfully written to odds_data.json with {len(fanduel_odds)} entries.")
+    
+    print(f"Data successfully written to {output_file_path} with {len(fanduel_odds)} entries.")
 else:
     print(f"Error: {response.status_code} - {response.text}")

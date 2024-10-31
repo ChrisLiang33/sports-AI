@@ -1,0 +1,299 @@
+[
+    {
+        "home_team": "Washington Wizards",
+        "away_team": "Atlanta Hawks",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Atlanta Hawks",
+                "spread": -5.0
+            },
+            {
+                "team": "Washington Wizards",
+                "spread": 5.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Washington Wizards",
+                "score": "133"
+            },
+            {
+                "name": "Atlanta Hawks",
+                "score": "120"
+            }
+        ],
+        "Washington Wizards": "2",
+        "Atlanta Hawks": "-2"
+    },
+    {
+        "home_team": "Indiana Pacers",
+        "away_team": "Boston Celtics",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Boston Celtics",
+                "spread": -6.0
+            },
+            {
+                "team": "Indiana Pacers",
+                "spread": 6.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Indiana Pacers",
+                "score": "135"
+            },
+            {
+                "name": "Boston Celtics",
+                "score": "132"
+            }
+        ],
+        "Indiana Pacers": "2",
+        "Boston Celtics": "-2"
+    },
+    {
+        "home_team": "Charlotte Hornets",
+        "away_team": "Toronto Raptors",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Toronto Raptors",
+                "spread": 6.0
+            },
+            {
+                "team": "Charlotte Hornets",
+                "spread": -6.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Charlotte Hornets",
+                "score": "138"
+            },
+            {
+                "name": "Toronto Raptors",
+                "score": "133"
+            }
+        ],
+        "Charlotte Hornets": "P",
+        "Toronto Raptors": "P"
+    },
+    {
+        "home_team": "Cleveland Cavaliers",
+        "away_team": "Los Angeles Lakers",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Los Angeles Lakers",
+                "spread": 4.5
+            },
+            {
+                "team": "Cleveland Cavaliers",
+                "spread": -4.5
+            }
+        ],
+        "scores": [
+            {
+                "name": "Cleveland Cavaliers",
+                "score": "134"
+            },
+            {
+                "name": "Los Angeles Lakers",
+                "score": "110"
+            }
+        ],
+        "Cleveland Cavaliers": "2",
+        "Los Angeles Lakers": "-2"
+    },
+    {
+        "home_team": "Philadelphia 76ers",
+        "away_team": "Detroit Pistons",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Detroit Pistons",
+                "spread": 4.0
+            },
+            {
+                "team": "Philadelphia 76ers",
+                "spread": -4.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Philadelphia 76ers",
+                "score": "95"
+            },
+            {
+                "name": "Detroit Pistons",
+                "score": "105"
+            }
+        ],
+        "Philadelphia 76ers": "-2",
+        "Detroit Pistons": "2"
+    },
+    {
+        "home_team": "Miami Heat",
+        "away_team": "New York Knicks",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "New York Knicks",
+                "spread": -1.5
+            },
+            {
+                "team": "Miami Heat",
+                "spread": 1.5
+            }
+        ],
+        "scores": [
+            {
+                "name": "Miami Heat",
+                "score": "107"
+            },
+            {
+                "name": "New York Knicks",
+                "score": "116"
+            }
+        ],
+        "Miami Heat": "-1",
+        "New York Knicks": "1"
+    },
+    {
+        "home_team": "Memphis Grizzlies",
+        "away_team": "Brooklyn Nets",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Brooklyn Nets",
+                "spread": 11.5
+            },
+            {
+                "team": "Memphis Grizzlies",
+                "spread": -11.5
+            }
+        ],
+        "scores": [
+            {
+                "name": "Memphis Grizzlies",
+                "score": "106"
+            },
+            {
+                "name": "Brooklyn Nets",
+                "score": "119"
+            }
+        ],
+        "Memphis Grizzlies": "-2",
+        "Brooklyn Nets": "2"
+    },
+    {
+        "home_team": "Chicago Bulls",
+        "away_team": "Orlando Magic",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Orlando Magic",
+                "spread": -5.5
+            },
+            {
+                "team": "Chicago Bulls",
+                "spread": 5.5
+            }
+        ],
+        "scores": [
+            {
+                "name": "Chicago Bulls",
+                "score": "102"
+            },
+            {
+                "name": "Orlando Magic",
+                "score": "99"
+            }
+        ],
+        "Chicago Bulls": "1",
+        "Orlando Magic": "-1"
+    },
+    {
+        "home_team": "Oklahoma City Thunder",
+        "away_team": "San Antonio Spurs",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "San Antonio Spurs",
+                "spread": 12.0
+            },
+            {
+                "team": "Oklahoma City Thunder",
+                "spread": -12.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Oklahoma City Thunder",
+                "score": "105"
+            },
+            {
+                "name": "San Antonio Spurs",
+                "score": "93"
+            }
+        ],
+        "Oklahoma City Thunder": "P",
+        "San Antonio Spurs": "P"
+    },
+    {
+        "home_team": "Golden State Warriors",
+        "away_team": "New Orleans Pelicans",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "New Orleans Pelicans",
+                "spread": 3.5
+            },
+            {
+                "team": "Golden State Warriors",
+                "spread": -3.5
+            }
+        ],
+        "scores": [
+            {
+                "name": "Golden State Warriors",
+                "score": "104"
+            },
+            {
+                "name": "New Orleans Pelicans",
+                "score": "89"
+            }
+        ],
+        "Golden State Warriors": "2",
+        "New Orleans Pelicans": "-2"
+    },
+    {
+        "home_team": "Los Angeles Clippers",
+        "away_team": "Portland Trail Blazers",
+        "game_date": "10-30",
+        "spread": [
+            {
+                "team": "Portland Trail Blazers",
+                "spread": 8.0
+            },
+            {
+                "team": "Los Angeles Clippers",
+                "spread": -8.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Los Angeles Clippers",
+                "score": "105"
+            },
+            {
+                "name": "Portland Trail Blazers",
+                "score": "106"
+            }
+        ],
+        "Los Angeles Clippers": "-2",
+        "Portland Trail Blazers": "2"
+    }
+]
