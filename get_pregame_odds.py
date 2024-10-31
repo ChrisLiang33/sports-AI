@@ -28,17 +28,17 @@ if response.status_code == 200:
                 filtered_event = {
                     "home_team": event["home_team"],
                     "away_team": event["away_team"],
-                    "spread": []  # Change 'points' to 'spread'
+                    "spread": []  
                 }
                 for market in bookmaker.get("markets", []):
                     if market["key"] == "spreads":
                         for outcome in market.get("outcomes", []):
-                            filtered_event["spread"].append({  # Change 'points' to 'spread'
+                            filtered_event["spread"].append({  
                                 "team": outcome["name"],
-                                "spread": outcome["point"],  # Change 'point' to 'spread'
+                                "spread": outcome["point"], 
                             })
 
-                if filtered_event["spread"]:  # Check if 'spread' is populated
+                if filtered_event["spread"]:
                     fanduel_odds.append(filtered_event)
 
     date_str = datetime.now().strftime("%m-%d")
