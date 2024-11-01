@@ -1,8 +1,8 @@
 import asyncio
-from get_pregame_odds import get_pregame_odds
-from get_final_score import get_final_score
-from clean_data import clean_data
-from compile_data import compile_data
+from src.get_pregame_odds import get_pregame_odds
+from src.get_final_score import get_final_score
+from src.clean_data import clean_data
+from src.compile_data import compile_data
 
 async def main():
     try:
