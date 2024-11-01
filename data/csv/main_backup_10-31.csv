@@ -1,23 +1,31 @@
-Teams,10-30
-Washington Wizards,2
-Atlanta Hawks,-2
-Indiana Pacers,2
-Boston Celtics,-2
-Charlotte Hornets,P
-Toronto Raptors,P
-Cleveland Cavaliers,2
-Los Angeles Lakers,-2
-Philadelphia 76ers,-2
-Detroit Pistons,2
-Miami Heat,-1
-New York Knicks,1
-Memphis Grizzlies,-2
-Brooklyn Nets,2
-Chicago Bulls,1
-Orlando Magic,-1
-Oklahoma City Thunder,P
-San Antonio Spurs,P
-Golden State Warriors,2
-New Orleans Pelicans,-2
-Los Angeles Clippers,-2
-Portland Trail Blazers,2
+Teams,10-22,10-23,10-24,10-25,10-26,10-27,10-28,10-29,10-30,10-31
+Washington Wizards,,,-1,,-2,,2,,2,
+Atlanta Hawks,,-1,,p,,-2,-2,,-2,
+Indiana Pacers,,P,,-2,,-2,P,,2,
+Boston Celtics,2,,1,,-1,,P,,-2,
+Charlotte Hornets,,2,,p,P,,,,P,
+Toronto Raptors,,-2,,2,1,,1,,P,
+Cleveland Cavaliers,,2,,p,2,,2,,2,
+Los Angeles Lakers,1,,,2,1,,P,,-2,
+Philadelphia 76ers,,-2,,-2,,2,,,-2,
+Detroit Pistons,,P,,p,1,,P,,2,
+Miami Heat,,-2,,,P,,P,,-1,
+New York Knicks,-2,,,2,,,-2,,1,
+Memphis Grizzlies,,p,,-2,2,,-2,,-2,2
+Brooklyn Nets,,1,,-1,,2,,P,2,
+Chicago Bulls,,-1,,2,-2,,2,,1,
+Orlando Magic,,2,,1,-2,,P,,-1,
+Oklahoma City Thunder,,,2,,2,2,,,P,
+San Antonio Spurs,,,p,,1,,1,,P,2
+Golden State Warriors,,2,,2,,-2,,2,2,
+New Orleans Pelicans,,1,,-1,,-2,,-2,-2,
+Los Angeles Clippers,,p,,,2,2,,,-2,P
+Portland Trail Blazers,,-2,,1,,2,P,,2,
+Minnesota Timberwolves,-1,,p,,-1,,,-2,,
+Milwaukee Bucks,,2,,-2,,-2,P,,,-2
+Houston Rockets,,-2,,2,-1,,1,,,2
+Utah Jazz,,p,,-2,,,1,-2,,-2
+Phoenix Suns,,p,,-2,2,,P,,,P
+Dallas Mavericks,,,p,,-2,,-1,2,,-2
+Denver Nuggets,,,-2,,-2,,-1,P,,
+Sacramento Kings,,,p,,-1,,P,2,,

@@ -1,0 +1,58 @@
+[
+    {
+        "home_team": "Memphis Grizzlies",
+        "away_team": "Milwaukee Bucks",
+        "scores": [
+            {
+                "name": "Memphis Grizzlies",
+                "score": "122"
+            },
+            {
+                "name": "Milwaukee Bucks",
+                "score": "99"
+            }
+        ]
+    },
+    {
+        "home_team": "Dallas Mavericks",
+        "away_team": "Houston Rockets",
+        "scores": [
+            {
+                "name": "Dallas Mavericks",
+                "score": "102"
+            },
+            {
+                "name": "Houston Rockets",
+                "score": "108"
+            }
+        ]
+    },
+    {
+        "home_team": "Utah Jazz",
+        "away_team": "San Antonio Spurs",
+        "scores": [
+            {
+                "name": "Utah Jazz",
+                "score": "88"
+            },
+            {
+                "name": "San Antonio Spurs",
+                "score": "106"
+            }
+        ]
+    },
+    {
+        "home_team": "Los Angeles Clippers",
+        "away_team": "Phoenix Suns",
+        "scores": [
+            {
+                "name": "Los Angeles Clippers",
+                "score": "119"
+            },
+            {
+                "name": "Phoenix Suns",
+                "score": "125"
+            }
+        ]
+    }
+]

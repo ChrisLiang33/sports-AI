@@ -1,0 +1,110 @@
+[
+    {
+        "home_team": "Memphis Grizzlies",
+        "away_team": "Milwaukee Bucks",
+        "game_date": "10-31",
+        "spread": [
+            {
+                "team": "Milwaukee Bucks",
+                "spread": -6.0
+            },
+            {
+                "team": "Memphis Grizzlies",
+                "spread": 6.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Memphis Grizzlies",
+                "score": "122"
+            },
+            {
+                "name": "Milwaukee Bucks",
+                "score": "99"
+            }
+        ],
+        "Memphis Grizzlies": "2",
+        "Milwaukee Bucks": "-2"
+    },
+    {
+        "home_team": "Dallas Mavericks",
+        "away_team": "Houston Rockets",
+        "game_date": "10-31",
+        "spread": [
+            {
+                "team": "Houston Rockets",
+                "spread": 6.5
+            },
+            {
+                "team": "Dallas Mavericks",
+                "spread": -6.5
+            }
+        ],
+        "scores": [
+            {
+                "name": "Dallas Mavericks",
+                "score": "102"
+            },
+            {
+                "name": "Houston Rockets",
+                "score": "108"
+            }
+        ],
+        "Dallas Mavericks": "-2",
+        "Houston Rockets": "2"
+    },
+    {
+        "home_team": "Utah Jazz",
+        "away_team": "San Antonio Spurs",
+        "game_date": "10-31",
+        "spread": [
+            {
+                "team": "San Antonio Spurs",
+                "spread": -1.0
+            },
+            {
+                "team": "Utah Jazz",
+                "spread": 1.0
+            }
+        ],
+        "scores": [
+            {
+                "name": "Utah Jazz",
+                "score": "88"
+            },
+            {
+                "name": "San Antonio Spurs",
+                "score": "106"
+            }
+        ],
+        "Utah Jazz": "-2",
+        "San Antonio Spurs": "2"
+    },
+    {
+        "home_team": "Los Angeles Clippers",
+        "away_team": "Phoenix Suns",
+        "game_date": "10-31",
+        "spread": [
+            {
+                "team": "Phoenix Suns",
+                "spread": -4.5
+            },
+            {
+                "team": "Los Angeles Clippers",
+                "spread": 4.5
+            }
+        ],
+        "scores": [
+            {
+                "name": "Los Angeles Clippers",
+                "score": "119"
+            },
+            {
+                "name": "Phoenix Suns",
+                "score": "125"
+            }
+        ],
+        "Los Angeles Clippers": "P",
+        "Phoenix Suns": "P"
+    }
+]
