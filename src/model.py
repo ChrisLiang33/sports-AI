@@ -116,7 +116,7 @@ def print_analysis(results):
         print("-" * 80)
 
 async def model_main():
-    with open('data/csv/main.csv', 'r') as file:
+    with open('data/csv/live/main.csv', 'r') as file:
         csv_data = file.read()
     today_date = datetime.now().strftime("%m-%d")
     pregame_path = f'data/pregame/{today_date}_pregame.json'  

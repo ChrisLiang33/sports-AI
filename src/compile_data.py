@@ -20,7 +20,7 @@ async def compile_data():
             coverage = game[team]
             team_coverage[team][game_date] = coverage  
 
-    csv_file_path = 'data/csv/main.csv'
+    csv_file_path = 'data/csv/live/main.csv'
     csv_data = {}
 
     if os.path.exists(csv_file_path):
@@ -49,7 +49,7 @@ async def compile_data():
     for team, ratings in csv_data.items():
         csv_data_rows.append([team] + ratings)
 
-    backup_file_path = f'data/csv/main_backup_{yesterday_date}.csv'
+    backup_file_path = f'data/csv/backup/main_backup_{yesterday_date}.csv'
     if os.path.exists(csv_file_path):
         with open(csv_file_path, 'r') as existing_file:
             existing_data = existing_file.readlines()

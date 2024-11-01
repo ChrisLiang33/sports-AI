@@ -82,11 +82,11 @@ def process_predictions(json_file_path):
                 team_predictions[away_team] = 'n/a'
     
     # Update CSV file
-    csv_file_path = 'data/csv/prediction_tracking.csv'
+    csv_file_path = 'data/csv/live/prediction_tracking.csv'
     
     # Create backup of existing CSV
     if os.path.exists(csv_file_path):
-        backup_path = f'data/csv/prediction_tracking_backup_{date}.csv'
+        backup_path = f'data/csv/backup/prediction_tracking_backup_{date}.csv'
         with open(csv_file_path, 'r') as existing_file:
             existing_data = existing_file.readlines()
         with open(backup_path, 'w') as backup_file:
