@@ -1,0 +1,128 @@
+[
+    {
+        "home_team": "Cleveland Cavaliers",
+        "away_team": "Orlando Magic",
+        "scores": [
+            {
+                "name": "Cleveland Cavaliers",
+                "score": "120"
+            },
+            {
+                "name": "Orlando Magic",
+                "score": "109"
+            }
+        ]
+    },
+    {
+        "home_team": "Detroit Pistons",
+        "away_team": "New York Knicks",
+        "scores": [
+            {
+                "name": "Detroit Pistons",
+                "score": "98"
+            },
+            {
+                "name": "New York Knicks",
+                "score": "128"
+            }
+        ]
+    },
+    {
+        "home_team": "Charlotte Hornets",
+        "away_team": "Boston Celtics",
+        "scores": [
+            {
+                "name": "Charlotte Hornets",
+                "score": "109"
+            },
+            {
+                "name": "Boston Celtics",
+                "score": "124"
+            }
+        ]
+    },
+    {
+        "home_team": "Atlanta Hawks",
+        "away_team": "Sacramento Kings",
+        "scores": [
+            {
+                "name": "Atlanta Hawks",
+                "score": "115"
+            },
+            {
+                "name": "Sacramento Kings",
+                "score": "123"
+            }
+        ]
+    },
+    {
+        "home_team": "Brooklyn Nets",
+        "away_team": "Chicago Bulls",
+        "scores": [
+            {
+                "name": "Brooklyn Nets",
+                "score": "120"
+            },
+            {
+                "name": "Chicago Bulls",
+                "score": "112"
+            }
+        ]
+    },
+    {
+        "home_team": "Toronto Raptors",
+        "away_team": "Los Angeles Lakers",
+        "scores": [
+            {
+                "name": "Toronto Raptors",
+                "score": "125"
+            },
+            {
+                "name": "Los Angeles Lakers",
+                "score": "131"
+            }
+        ]
+    },
+    {
+        "home_team": "New Orleans Pelicans",
+        "away_team": "Indiana Pacers",
+        "scores": [
+            {
+                "name": "New Orleans Pelicans",
+                "score": "125"
+            },
+            {
+                "name": "Indiana Pacers",
+                "score": "118"
+            }
+        ]
+    },
+    {
+        "home_team": "Minnesota Timberwolves",
+        "away_team": "Denver Nuggets",
+        "scores": [
+            {
+                "name": "Minnesota Timberwolves",
+                "score": "119"
+            },
+            {
+                "name": "Denver Nuggets",
+                "score": "116"
+            }
+        ]
+    },
+    {
+        "home_team": "Portland Trail Blazers",
+        "away_team": "Oklahoma City Thunder",
+        "scores": [
+            {
+                "name": "Portland Trail Blazers",
+                "score": "114"
+            },
+            {
+                "name": "Oklahoma City Thunder",
+                "score": "137"
+            }
+        ]
+    }
+]

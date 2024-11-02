@@ -5,6 +5,7 @@ from src.clean_data import clean_data
 from src.compile_data import compile_data
 from src.model import model_main
 from src.prediction_into_csv import main as prediction_into_csv
+from src.evaluation import evaluate_predictions
 
 async def main():
     try:
@@ -27,6 +28,9 @@ async def main():
 
         print("Updating CSV file...")
         await prediction_into_csv()
+
+        print('yesterdays results ')
+        await evaluate_predictions()
 
         print("Process completed successfully.")
     

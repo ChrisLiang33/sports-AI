@@ -20,6 +20,7 @@ async def clean_data():
     combined_data = []
 
     weight = 8.5
+    super_weight = 15
 
     for odds in odds_data:
         home_team = odds['home_team']
@@ -37,6 +38,12 @@ async def clean_data():
             if abs(home_score + home_spread - away_score) <= 2.5:  # Push
                 home_covered = 'P'
                 away_covered = 'P'
+            elif home_score + home_spread + super_weight < away_score:  
+                home_covered = '-3'
+                away_covered = '3'
+            elif away_score + away_spread + super_weight < home_score:
+                home_covered = '3'
+                away_covered = '-3'
             elif home_score + home_spread + weight < away_score:  
                 home_covered = '-2'
                 away_covered = '2'

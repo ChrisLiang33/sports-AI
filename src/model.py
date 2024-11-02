@@ -12,6 +12,8 @@ def load_and_prepare_data(csv_content, pregame_content):
         df = pd.DataFrame(data, columns=headers)
         df.set_index(headers[0], inplace=True)
         value_map = {
+            '3': 3.0,
+            '-3': -3.0,
             '2': 2.0,
             '-2': -2.0,
             '1': 1.0,

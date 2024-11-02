@@ -1,0 +1,246 @@
+{
+    "date": "11-02",
+    "analysis_timestamp": "2024-11-02 15:35:47",
+    "games": [
+        {
+            "matchup": {
+                "away_team": "Boston Celtics",
+                "home_team": "Charlotte Hornets"
+            },
+            "spreads": {
+                "actual_spread": 10.5,
+                "model_spread": 3.7
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 0.0,
+                    "score": 0.447
+                },
+                "away": {
+                    "recent_performance": -0.16666666666666666,
+                    "score": 0.072
+                }
+            },
+            "prediction": {
+                "recommendation": "AWAY (Boston Celtics)",
+                "confidence": 1.35
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Memphis Grizzlies",
+                "home_team": "Philadelphia 76ers"
+            },
+            "spreads": {
+                "actual_spread": -1.0,
+                "model_spread": -0.3
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": -0.6666666666666666,
+                    "score": -0.367
+                },
+                "away": {
+                    "recent_performance": -0.6666666666666666,
+                    "score": -0.342
+                }
+            },
+            "prediction": {
+                "recommendation": "PASS",
+                "confidence": 0.15
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Sacramento Kings",
+                "home_team": "Toronto Raptors"
+            },
+            "spreads": {
+                "actual_spread": 8.5,
+                "model_spread": 1.3
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 0.8333333333333334,
+                    "score": 0.877
+                },
+                "away": {
+                    "recent_performance": 1.0,
+                    "score": 0.747
+                }
+            },
+            "prediction": {
+                "recommendation": "AWAY (Sacramento Kings)",
+                "confidence": 1.44
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Cleveland Cavaliers",
+                "home_team": "Milwaukee Bucks"
+            },
+            "spreads": {
+                "actual_spread": -1.5,
+                "model_spread": -19.5
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": -1.1666666666666667,
+                    "score": -0.523
+                },
+                "away": {
+                    "recent_performance": 1.6666666666666667,
+                    "score": 1.428
+                }
+            },
+            "prediction": {
+                "recommendation": "AWAY (Cleveland Cavaliers)",
+                "confidence": 3.6
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Golden State Warriors",
+                "home_team": "Houston Rockets"
+            },
+            "spreads": {
+                "actual_spread": -5.0,
+                "model_spread": -0.4
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 0.6666666666666666,
+                    "score": 0.724
+                },
+                "away": {
+                    "recent_performance": 0.6666666666666666,
+                    "score": 0.765
+                }
+            },
+            "prediction": {
+                "recommendation": "HOME (Houston Rockets)",
+                "confidence": 0.92
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Minnesota Timberwolves",
+                "home_team": "San Antonio Spurs"
+            },
+            "spreads": {
+                "actual_spread": 3.5,
+                "model_spread": 17.1
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 1.1666666666666667,
+                    "score": 1.207
+                },
+                "away": {
+                    "recent_performance": -0.8333333333333334,
+                    "score": -0.501
+                }
+            },
+            "prediction": {
+                "recommendation": "HOME (San Antonio Spurs)",
+                "confidence": 2.72
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Miami Heat",
+                "home_team": "Washington Wizards"
+            },
+            "spreads": {
+                "actual_spread": 9.5,
+                "model_spread": 7.3
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 0.6666666666666666,
+                    "score": 0.674
+                },
+                "away": {
+                    "recent_performance": 0.0,
+                    "score": -0.06
+                }
+            },
+            "prediction": {
+                "recommendation": "PASS",
+                "confidence": 0.43
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Utah Jazz",
+                "home_team": "Denver Nuggets"
+            },
+            "spreads": {
+                "actual_spread": -10.5,
+                "model_spread": 7.4
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 0.0,
+                    "score": 0.049
+                },
+                "away": {
+                    "recent_performance": -1.0,
+                    "score": -0.691
+                }
+            },
+            "prediction": {
+                "recommendation": "HOME (Denver Nuggets)",
+                "confidence": 3.58
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Portland Trail Blazers",
+                "home_team": "Phoenix Suns"
+            },
+            "spreads": {
+                "actual_spread": -13.0,
+                "model_spread": 6.4
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 1.0,
+                    "score": 0.872
+                },
+                "away": {
+                    "recent_performance": 0.16666666666666666,
+                    "score": 0.229
+                }
+            },
+            "prediction": {
+                "recommendation": "HOME (Phoenix Suns)",
+                "confidence": 3.89
+            }
+        },
+        {
+            "matchup": {
+                "away_team": "Oklahoma City Thunder",
+                "home_team": "Los Angeles Clippers"
+            },
+            "spreads": {
+                "actual_spread": 5.5,
+                "model_spread": -8.4
+            },
+            "team_metrics": {
+                "home": {
+                    "recent_performance": 0.16666666666666666,
+                    "score": 0.539
+                },
+                "away": {
+                    "recent_performance": 1.5,
+                    "score": 1.38
+                }
+            },
+            "prediction": {
+                "recommendation": "AWAY (Oklahoma City Thunder)",
+                "confidence": 2.78
+            }
+        }
+    ]
+}

@@ -1,0 +1,142 @@
+[
+    {
+        "home_team": "Charlotte Hornets",
+        "away_team": "Boston Celtics",
+        "spread": [
+            {
+                "team": "Boston Celtics",
+                "spread": -10.5
+            },
+            {
+                "team": "Charlotte Hornets",
+                "spread": 10.5
+            }
+        ]
+    },
+    {
+        "home_team": "Philadelphia 76ers",
+        "away_team": "Memphis Grizzlies",
+        "spread": [
+            {
+                "team": "Memphis Grizzlies",
+                "spread": 1.0
+            },
+            {
+                "team": "Philadelphia 76ers",
+                "spread": -1.0
+            }
+        ]
+    },
+    {
+        "home_team": "Toronto Raptors",
+        "away_team": "Sacramento Kings",
+        "spread": [
+            {
+                "team": "Sacramento Kings",
+                "spread": -8.5
+            },
+            {
+                "team": "Toronto Raptors",
+                "spread": 8.5
+            }
+        ]
+    },
+    {
+        "home_team": "Milwaukee Bucks",
+        "away_team": "Cleveland Cavaliers",
+        "spread": [
+            {
+                "team": "Cleveland Cavaliers",
+                "spread": 1.5
+            },
+            {
+                "team": "Milwaukee Bucks",
+                "spread": -1.5
+            }
+        ]
+    },
+    {
+        "home_team": "Houston Rockets",
+        "away_team": "Golden State Warriors",
+        "spread": [
+            {
+                "team": "Golden State Warriors",
+                "spread": 5.0
+            },
+            {
+                "team": "Houston Rockets",
+                "spread": -5.0
+            }
+        ]
+    },
+    {
+        "home_team": "San Antonio Spurs",
+        "away_team": "Minnesota Timberwolves",
+        "spread": [
+            {
+                "team": "Minnesota Timberwolves",
+                "spread": -3.5
+            },
+            {
+                "team": "San Antonio Spurs",
+                "spread": 3.5
+            }
+        ]
+    },
+    {
+        "home_team": "Washington Wizards",
+        "away_team": "Miami Heat",
+        "spread": [
+            {
+                "team": "Miami Heat",
+                "spread": -9.5
+            },
+            {
+                "team": "Washington Wizards",
+                "spread": 9.5
+            }
+        ]
+    },
+    {
+        "home_team": "Denver Nuggets",
+        "away_team": "Utah Jazz",
+        "spread": [
+            {
+                "team": "Denver Nuggets",
+                "spread": -10.5
+            },
+            {
+                "team": "Utah Jazz",
+                "spread": 10.5
+            }
+        ]
+    },
+    {
+        "home_team": "Phoenix Suns",
+        "away_team": "Portland Trail Blazers",
+        "spread": [
+            {
+                "team": "Phoenix Suns",
+                "spread": -13.0
+            },
+            {
+                "team": "Portland Trail Blazers",
+                "spread": 13.0
+            }
+        ]
+    },
+    {
+        "home_team": "Los Angeles Clippers",
+        "away_team": "Oklahoma City Thunder",
+        "spread": [
+            {
+                "team": "Los Angeles Clippers",
+                "spread": 5.5
+            },
+            {
+                "team": "Oklahoma City Thunder",
+                "spread": -5.5
+            }
+        ]
+    }
+]
