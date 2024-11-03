@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List, Dict
-from datetime import datetime, timedelta
+from datetime import datetime
 import json
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -44,6 +44,7 @@ class PredictionResponse(BaseModel):
 @app.get('/predictions', response_model=PredictionResponse)
 async def get_predictions():
    todays_date = datetime.now().strftime('%m-%d')
-   with open(f'data/prediction/{todays_date}_prediction.json', 'r') as f:
+   with open(f'../data/prediction/{todays_date}_prediction.json', 'r') as f:
       data = json.load(f)
    return data
+

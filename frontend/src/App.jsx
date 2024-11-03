@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Card from "./components/Card";
+import "./index.css";
 
 const App = () => {
   const [predictions, setPredictions] = useState(null);
@@ -34,10 +36,13 @@ const App = () => {
         {predictions.games.map((game, index) => (
           <li key={index}>
             <h3>
-              {game.matchup.away_team} vs {game.matchup.home_team}
+              <Card
+                away_team={game.matchup.away_team}
+                home_team={game.matchup.home_team}
+                score={game.prediction.confidence}
+                pick={game.prediction.recommendation}
+              />
             </h3>
-            <p>Recommendation: {game.prediction.recommendation}</p>
-            <p>Confidence: {game.prediction.confidence}</p>
           </li>
         ))}
       </ul>
