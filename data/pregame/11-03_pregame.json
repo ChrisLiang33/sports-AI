@@ -1,0 +1,44 @@
+[
+    {
+        "home_team": "Brooklyn Nets",
+        "away_team": "Detroit Pistons",
+        "spread": [
+            {
+                "team": "Brooklyn Nets",
+                "spread": -2.5
+            },
+            {
+                "team": "Detroit Pistons",
+                "spread": 2.5
+            }
+        ]
+    },
+    {
+        "home_team": "New Orleans Pelicans",
+        "away_team": "Atlanta Hawks",
+        "spread": [
+            {
+                "team": "Atlanta Hawks",
+                "spread": 3.5
+            },
+            {
+                "team": "New Orleans Pelicans",
+                "spread": -3.5
+            }
+        ]
+    },
+    {
+        "home_team": "Dallas Mavericks",
+        "away_team": "Orlando Magic",
+        "spread": [
+            {
+                "team": "Dallas Mavericks",
+                "spread": -6.5
+            },
+            {
+                "team": "Orlando Magic",
+                "spread": 6.5
+            }
+        ]
+    }
+]

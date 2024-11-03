@@ -124,7 +124,6 @@ def process_predictions(json_file_path):
         writer = csv.writer(csvfile)
         writer.writerow(header)
         
-        # Sort teams alphabetically for consistency
         sorted_teams = sorted(csv_data.keys())
         for team in sorted_teams:
             writer.writerow([team] + csv_data[team])

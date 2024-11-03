@@ -60,7 +60,6 @@ def analyze_matchup(home_team, away_team, metrics, spread):
         away_metrics['overall_performance'] * 0.3 +
         away_metrics['consistency'] * 0.2
     )
-    home_score += 0.2
     spread_value = home_score - away_score
     actual_spread = spread
     spread_difference = spread_value - (actual_spread / 10)
@@ -78,7 +77,6 @@ def analyze_matchup(home_team, away_team, metrics, spread):
         'away_team': away_team,
         'home_score': round(home_score, 3),
         'away_score': round(away_score, 3),
-        'model_spread_value': round(spread_value * 10, 1),  # Convert back to points
         'actual_spread': actual_spread,
         'recommendation': recommendation,
         'recommended_team': recommended_team,
@@ -107,7 +105,6 @@ def print_analysis(results):
     for result in results:
         print(f"\n{result['away_team']} @ {result['home_team']}")
         print(f"Current Spread: {result['actual_spread']} (home team)")
-        print(f"Model Spread Value: {result['model_spread_value']}")
         print(f"Recent Performance (Last 3 games):")
         print(f"  {result['home_team']}: {result['home_recent_games']:.2f}")
         print(f"  {result['away_team']}: {result['away_recent_games']:.2f}")
@@ -139,7 +136,6 @@ async def model_main():
             },
             "spreads": {
                 "actual_spread": float(result['actual_spread']),
-                "model_spread": float(result['model_spread_value'])
             },
             "team_metrics": {
                 "home": {

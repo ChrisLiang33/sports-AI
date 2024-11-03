@@ -1,6 +1,6 @@
 {
     "date": "11-02",
-    "analysis_timestamp": "2024-11-02 15:35:47",
+    "analysis_timestamp": "2024-11-02 16:15:31",
     "games": [
         {
             "matchup": {
@@ -8,13 +8,12 @@
                 "home_team": "Charlotte Hornets"
             },
             "spreads": {
-                "actual_spread": 10.5,
-                "model_spread": 3.7
+                "actual_spread": 10.5
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 0.0,
-                    "score": 0.447
+                    "score": 0.247
                 },
                 "away": {
                     "recent_performance": -0.16666666666666666,
@@ -23,7 +22,7 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Boston Celtics)",
-                "confidence": 1.35
+                "confidence": 1.75
             }
         },
         {
@@ -32,13 +31,12 @@
                 "home_team": "Philadelphia 76ers"
             },
             "spreads": {
-                "actual_spread": -1.0,
-                "model_spread": -0.3
+                "actual_spread": -1.0
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": -0.6666666666666666,
-                    "score": -0.367
+                    "score": -0.567
                 },
                 "away": {
                     "recent_performance": -0.6666666666666666,
@@ -47,7 +45,7 @@
             },
             "prediction": {
                 "recommendation": "PASS",
-                "confidence": 0.15
+                "confidence": 0.25
             }
         },
         {
@@ -56,13 +54,12 @@
                 "home_team": "Toronto Raptors"
             },
             "spreads": {
-                "actual_spread": 8.5,
-                "model_spread": 1.3
+                "actual_spread": 8.5
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 0.8333333333333334,
-                    "score": 0.877
+                    "score": 0.677
                 },
                 "away": {
                     "recent_performance": 1.0,
@@ -71,7 +68,7 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Sacramento Kings)",
-                "confidence": 1.44
+                "confidence": 1.84
             }
         },
         {
@@ -80,13 +77,12 @@
                 "home_team": "Milwaukee Bucks"
             },
             "spreads": {
-                "actual_spread": -1.5,
-                "model_spread": -19.5
+                "actual_spread": -2.0
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": -1.1666666666666667,
-                    "score": -0.523
+                    "score": -0.723
                 },
                 "away": {
                     "recent_performance": 1.6666666666666667,
@@ -95,7 +91,7 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Cleveland Cavaliers)",
-                "confidence": 3.6
+                "confidence": 3.9
             }
         },
         {
@@ -104,13 +100,12 @@
                 "home_team": "Houston Rockets"
             },
             "spreads": {
-                "actual_spread": -5.0,
-                "model_spread": -0.4
+                "actual_spread": -5.0
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 0.6666666666666666,
-                    "score": 0.724
+                    "score": 0.524
                 },
                 "away": {
                     "recent_performance": 0.6666666666666666,
@@ -118,8 +113,8 @@
                 }
             },
             "prediction": {
-                "recommendation": "HOME (Houston Rockets)",
-                "confidence": 0.92
+                "recommendation": "PASS",
+                "confidence": 0.52
             }
         },
         {
@@ -128,13 +123,12 @@
                 "home_team": "San Antonio Spurs"
             },
             "spreads": {
-                "actual_spread": 3.5,
-                "model_spread": 17.1
+                "actual_spread": 4.0
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 1.1666666666666667,
-                    "score": 1.207
+                    "score": 1.007
                 },
                 "away": {
                     "recent_performance": -0.8333333333333334,
@@ -143,7 +137,7 @@
             },
             "prediction": {
                 "recommendation": "HOME (San Antonio Spurs)",
-                "confidence": 2.72
+                "confidence": 2.22
             }
         },
         {
@@ -152,13 +146,12 @@
                 "home_team": "Washington Wizards"
             },
             "spreads": {
-                "actual_spread": 9.5,
-                "model_spread": 7.3
+                "actual_spread": 9.5
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 0.6666666666666666,
-                    "score": 0.674
+                    "score": 0.474
                 },
                 "away": {
                     "recent_performance": 0.0,
@@ -166,8 +159,8 @@
                 }
             },
             "prediction": {
-                "recommendation": "PASS",
-                "confidence": 0.43
+                "recommendation": "AWAY (Miami Heat)",
+                "confidence": 0.83
             }
         },
         {
@@ -176,13 +169,12 @@
                 "home_team": "Denver Nuggets"
             },
             "spreads": {
-                "actual_spread": -10.5,
-                "model_spread": 7.4
+                "actual_spread": -10.5
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 0.0,
-                    "score": 0.049
+                    "score": -0.151
                 },
                 "away": {
                     "recent_performance": -1.0,
@@ -191,7 +183,7 @@
             },
             "prediction": {
                 "recommendation": "HOME (Denver Nuggets)",
-                "confidence": 3.58
+                "confidence": 3.18
             }
         },
         {
@@ -200,13 +192,12 @@
                 "home_team": "Phoenix Suns"
             },
             "spreads": {
-                "actual_spread": -13.0,
-                "model_spread": 6.4
+                "actual_spread": -12.5
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 1.0,
-                    "score": 0.872
+                    "score": 0.672
                 },
                 "away": {
                     "recent_performance": 0.16666666666666666,
@@ -215,7 +206,7 @@
             },
             "prediction": {
                 "recommendation": "HOME (Phoenix Suns)",
-                "confidence": 3.89
+                "confidence": 3.39
             }
         },
         {
@@ -224,13 +215,12 @@
                 "home_team": "Los Angeles Clippers"
             },
             "spreads": {
-                "actual_spread": 5.5,
-                "model_spread": -8.4
+                "actual_spread": 5.5
             },
             "team_metrics": {
                 "home": {
                     "recent_performance": 0.16666666666666666,
-                    "score": 0.539
+                    "score": 0.339
                 },
                 "away": {
                     "recent_performance": 1.5,
@@ -239,7 +229,7 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Oklahoma City Thunder)",
-                "confidence": 2.78
+                "confidence": 3.18
             }
         }
     ]

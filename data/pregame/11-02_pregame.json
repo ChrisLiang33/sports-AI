@@ -47,11 +47,11 @@
         "spread": [
             {
                 "team": "Cleveland Cavaliers",
-                "spread": 1.5
+                "spread": 2.0
             },
             {
                 "team": "Milwaukee Bucks",
-                "spread": -1.5
+                "spread": -2.0
             }
         ]
     },
@@ -75,11 +75,11 @@
         "spread": [
             {
                 "team": "Minnesota Timberwolves",
-                "spread": -3.5
+                "spread": -4.0
             },
             {
                 "team": "San Antonio Spurs",
-                "spread": 3.5
+                "spread": 4.0
             }
         ]
     },
@@ -117,11 +117,11 @@
         "spread": [
             {
                 "team": "Phoenix Suns",
-                "spread": -13.0
+                "spread": -12.5
             },
             {
                 "team": "Portland Trail Blazers",
-                "spread": 13.0
+                "spread": 12.5
             }
         ]
     },
