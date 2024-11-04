@@ -4,7 +4,9 @@ import os
 from datetime import datetime
 from collections import defaultdict
 
-# Full list of NBA teams
+# prediction to prediction csv 
+# this file saves the predictions from the prediction.json file to the prediction_tracking.csv file
+
 NBA_TEAMS = [
     "Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets",
     "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets",

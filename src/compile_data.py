@@ -4,6 +4,8 @@ import os
 from collections import defaultdict
 from datetime import datetime, timedelta
 
+# traning_data -> adding to main.csv
+
 async def compile_data():
     yesterday_date = (datetime.now() - timedelta(days=1)).strftime("%m-%d")
     today_date = datetime.now().strftime("%m-%d")

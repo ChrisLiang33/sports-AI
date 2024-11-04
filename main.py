@@ -3,7 +3,7 @@ from src.get_pregame_odds import get_pregame_odds
 from src.get_final_score import get_final_score
 from src.clean_data import clean_data
 from src.compile_data import compile_data
-from src.model import model_main
+from src.trend_model import model_main
 from src.prediction_into_csv import main as prediction_into_csv
 from src.evaluation import evaluate_predictions
 

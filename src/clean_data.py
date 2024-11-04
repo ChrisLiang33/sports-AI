@@ -2,6 +2,10 @@ import json
 import os
 from datetime import datetime, timedelta
 
+# pregame + final_score = training_data
+# this file is used to clean the data from the pregame and final score files and combine them into a training data file
+
+
 async def clean_data():
     yesterday_date = (datetime.now() - timedelta(days=1)).strftime("%m-%d")
 

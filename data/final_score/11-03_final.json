@@ -1,0 +1,30 @@
+[
+    {
+        "home_team": "New Orleans Pelicans",
+        "away_team": "Atlanta Hawks",
+        "scores": [
+            {
+                "name": "New Orleans Pelicans",
+                "score": "111"
+            },
+            {
+                "name": "Atlanta Hawks",
+                "score": "126"
+            }
+        ]
+    },
+    {
+        "home_team": "Dallas Mavericks",
+        "away_team": "Orlando Magic",
+        "scores": [
+            {
+                "name": "Dallas Mavericks",
+                "score": "108"
+            },
+            {
+                "name": "Orlando Magic",
+                "score": "85"
+            }
+        ]
+    }
+]

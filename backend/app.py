@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import List, Dict
-from datetime import datetime
+from typing import List, Dict, Optional
+from datetime import datetime, timedelta
 import json
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -25,6 +25,7 @@ class Spreads(BaseModel):
 class Prediction(BaseModel):
     recommendation: str
     confidence: float
+    result: Optional[bool] = None
 
 class Matchup(BaseModel):
     away_team: str
@@ -47,4 +48,13 @@ async def get_predictions():
    with open(f'../data/prediction/{todays_date}_prediction.json', 'r') as f:
       data = json.load(f)
    return data
+
+@app.get('/yesterday_predictions', response_model=PredictionResponse)
+async def get_yesterday_predictions():
+    yesterdays_date = (datetime.now() - timedelta(days=1)).strftime('%m-%d')
+    with open(f'../data/prediction/{yesterdays_date}_prediction.json', 'r') as f:
+        data = json.load(f)
+    return data
+
+
 

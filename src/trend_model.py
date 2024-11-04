@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 import json
-import os
 from datetime import datetime
+
+# this file is a model that will be used to predict the outcome of NBA games based on the spread. The model will use past rating data from the csv file and pregame data to make predictions. The model will calculate metrics for each team and analyze the matchup to make a recommendation. The model will print the analysis results and save the results to a json file.
+
 
 def load_and_prepare_data(csv_content, pregame_content):
     try:

@@ -4,6 +4,8 @@ import os
 import json
 from datetime import datetime
 
+# get pregame json data 
+
 load_dotenv()
 api_key = os.getenv("API_KEY")
 
