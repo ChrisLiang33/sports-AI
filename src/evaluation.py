@@ -19,13 +19,15 @@ async def evaluate_predictions():
     for idx, row in prediction_df.iterrows():
         team = row['Teams']
         prediction = row[yesterday_date]
-        
-        if prediction == '1': 
+        if prediction != 'nan' and prediction == 1:
             team_performance = main_df.loc[main_df['Teams'] == team, yesterday_date].values
             if len(team_performance) > 0:
-                team_performance = int(team_performance[0])
+                if team_performance[0] == 'p' or team_performance[0] == 'P':
+                    team_performance = 1
+                else:
+                    team_performance = int(team_performance[0])
                 total_predictions += 1
-                is_correct = team_performance in ['0', '1', 'p', 'P', '2', '3', 1, 2, 3,]
+                is_correct = team_performance in ['0', '1', 'p', 'P', '2', '3', 1, 2, 3, -1]
                 if is_correct:
                     correct_predictions += 1
                 else:

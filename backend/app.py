@@ -4,7 +4,6 @@ from typing import List, Dict, Optional
 from datetime import datetime, timedelta
 import json
 from fastapi.middleware.cors import CORSMiddleware
-
 app = FastAPI()
 
 app.add_middleware(

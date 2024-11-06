@@ -5,7 +5,6 @@ from datetime import datetime
 
 # this file is a model that will be used to predict the outcome of NBA games based on the spread. The model will use past rating data from the csv file and pregame data to make predictions. The model will calculate metrics for each team and analyze the matchup to make a recommendation. The model will print the analysis results and save the results to a json file.
 
-
 def load_and_prepare_data(csv_content, pregame_content):
     try:
         lines = [line.strip() for line in csv_content.split('\n') if line.strip()]
@@ -30,6 +29,7 @@ def load_and_prepare_data(csv_content, pregame_content):
     except Exception as e:
         print(f"Error loading data: {str(e)}")
         raise
+
 def calculate_metrics(df):
     metrics = {}
     for team in df.index:

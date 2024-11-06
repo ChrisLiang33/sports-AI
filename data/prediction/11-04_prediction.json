@@ -22,7 +22,8 @@
             },
             "prediction": {
                 "recommendation": "HOME (Cleveland Cavaliers)",
-                "confidence": 5.01
+                "confidence": 5.01,
+                "result": true
             }
         },
         {
@@ -45,7 +46,8 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Golden State Warriors)",
-                "confidence": 4.37
+                "confidence": 4.37,
+                "result": true
             }
         },
         {
@@ -91,7 +93,8 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Boston Celtics)",
-                "confidence": 1.79
+                "confidence": 1.79,
+                "result": true
             }
         },
         {
@@ -114,7 +117,8 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Memphis Grizzlies)",
-                "confidence": 1.7
+                "confidence": 1.7,
+                "result": true
             }
         },
         {
@@ -160,7 +164,8 @@
             },
             "prediction": {
                 "recommendation": "HOME (Chicago Bulls)",
-                "confidence": 5.44
+                "confidence": 5.44,
+                "result": false
             }
         },
         {
@@ -183,7 +188,8 @@
             },
             "prediction": {
                 "recommendation": "AWAY (New York Knicks)",
-                "confidence": 0.96
+                "confidence": 0.96,
+                "result": false
             }
         },
         {
@@ -229,7 +235,8 @@
             },
             "prediction": {
                 "recommendation": "HOME (Oklahoma City Thunder)",
-                "confidence": 6.78
+                "confidence": 6.78,
+                "result": true
             }
         },
         {
@@ -252,7 +259,8 @@
             },
             "prediction": {
                 "recommendation": "AWAY (Portland Trail Blazers)",
-                "confidence": 1.65
+                "confidence": 1.65,
+                "result": true
             }
         },
         {
@@ -275,7 +283,8 @@
             },
             "prediction": {
                 "recommendation": "HOME (Dallas Mavericks)",
-                "confidence": 2.17
+                "confidence": 2.17,
+                "result": false
             }
         },
         {
@@ -298,7 +307,8 @@
             },
             "prediction": {
                 "recommendation": "HOME (Denver Nuggets)",
-                "confidence": 1.66
+                "confidence": 1.66,
+                "result": true
             }
         },
         {
@@ -321,7 +331,8 @@
             },
             "prediction": {
                 "recommendation": "HOME (Phoenix Suns)",
-                "confidence": 3.32
+                "confidence": 3.32,
+                "result": true
             }
         },
         {
@@ -344,7 +355,8 @@
             },
             "prediction": {
                 "recommendation": "AWAY (San Antonio Spurs)",
-                "confidence": 2.22
+                "confidence": 2.22,
+                "result": true
             }
         }
     ]

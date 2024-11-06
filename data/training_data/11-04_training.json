@@ -1,0 +1,407 @@
+[
+    {
+        "home_team": "cleveland cavaliers",
+        "away_team": "milwaukee bucks",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "milwaukee bucks",
+                "spread": 7.0
+            },
+            {
+                "team": "cleveland cavaliers",
+                "spread": -7.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "116",
+                "name": "Cleveland Cavaliers"
+            },
+            {
+                "score": "114",
+                "name": "Milwaukee Bucks"
+            }
+        ],
+        "cleveland cavaliers": "-1",
+        "milwaukee bucks": "1"
+    },
+    {
+        "home_team": "washington wizards",
+        "away_team": "golden state warriors",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "golden state warriors",
+                "spread": -10.5
+            },
+            {
+                "team": "washington wizards",
+                "spread": 10.5
+            }
+        ],
+        "scores": [
+            {
+                "score": "112",
+                "name": "Washington Wizards"
+            },
+            {
+                "score": "125",
+                "name": "Golden State Warriors"
+            }
+        ],
+        "washington wizards": "P",
+        "golden state warriors": "P"
+    },
+    {
+        "home_team": "detroit pistons",
+        "away_team": "los angeles lakers",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "los angeles lakers",
+                "spread": -6.5
+            },
+            {
+                "team": "detroit pistons",
+                "spread": 6.5
+            }
+        ],
+        "scores": [
+            {
+                "score": "115",
+                "name": "Detroit Pistons"
+            },
+            {
+                "score": "103",
+                "name": "Los Angeles Lakers"
+            }
+        ],
+        "detroit pistons": "3",
+        "los angeles lakers": "-3"
+    },
+    {
+        "home_team": "atlanta hawks",
+        "away_team": "boston celtics",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "boston celtics",
+                "spread": -10.0
+            },
+            {
+                "team": "atlanta hawks",
+                "spread": 10.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "93",
+                "name": "Atlanta Hawks"
+            },
+            {
+                "score": "123",
+                "name": "Boston Celtics"
+            }
+        ],
+        "atlanta hawks": "-3",
+        "boston celtics": "3"
+    },
+    {
+        "home_team": "brooklyn nets",
+        "away_team": "memphis grizzlies",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "memphis grizzlies",
+                "spread": -4.0
+            },
+            {
+                "team": "brooklyn nets",
+                "spread": 4.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "106",
+                "name": "Brooklyn Nets"
+            },
+            {
+                "score": "104",
+                "name": "Memphis Grizzlies"
+            }
+        ],
+        "brooklyn nets": "1",
+        "memphis grizzlies": "-1"
+    },
+    {
+        "home_team": "miami heat",
+        "away_team": "sacramento kings",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "sacramento kings",
+                "spread": -1.0
+            },
+            {
+                "team": "miami heat",
+                "spread": 1.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "110",
+                "name": "Miami Heat"
+            },
+            {
+                "score": "111",
+                "name": "Sacramento Kings"
+            }
+        ],
+        "miami heat": "P",
+        "sacramento kings": "P"
+    },
+    {
+        "home_team": "chicago bulls",
+        "away_team": "utah jazz",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "utah jazz",
+                "spread": 8.0
+            },
+            {
+                "team": "chicago bulls",
+                "spread": -8.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "126",
+                "name": "Chicago Bulls"
+            },
+            {
+                "score": "135",
+                "name": "Utah Jazz"
+            }
+        ],
+        "chicago bulls": "-3",
+        "utah jazz": "3"
+    },
+    {
+        "home_team": "houston rockets",
+        "away_team": "new york knicks",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "new york knicks",
+                "spread": -2.0
+            },
+            {
+                "team": "houston rockets",
+                "spread": 2.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "109",
+                "name": "Houston Rockets"
+            },
+            {
+                "score": "97",
+                "name": "New York Knicks"
+            }
+        ],
+        "houston rockets": "2",
+        "new york knicks": "-2"
+    },
+    {
+        "home_team": "minnesota timberwolves",
+        "away_team": "charlotte hornets",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "charlotte hornets",
+                "spread": 10.0
+            },
+            {
+                "team": "minnesota timberwolves",
+                "spread": -10.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "114",
+                "name": "Minnesota Timberwolves"
+            },
+            {
+                "score": "93",
+                "name": "Charlotte Hornets"
+            }
+        ],
+        "minnesota timberwolves": "2",
+        "charlotte hornets": "-2"
+    },
+    {
+        "home_team": "oklahoma city thunder",
+        "away_team": "orlando magic",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "orlando magic",
+                "spread": 13.0
+            },
+            {
+                "team": "oklahoma city thunder",
+                "spread": -13.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "102",
+                "name": "Oklahoma City Thunder"
+            },
+            {
+                "score": "86",
+                "name": "Orlando Magic"
+            }
+        ],
+        "oklahoma city thunder": "1",
+        "orlando magic": "-1"
+    },
+    {
+        "home_team": "new orleans pelicans",
+        "away_team": "portland trail blazers",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "portland trail blazers",
+                "spread": 2.5
+            },
+            {
+                "team": "new orleans pelicans",
+                "spread": -2.5
+            }
+        ],
+        "scores": [
+            {
+                "score": "100",
+                "name": "New Orleans Pelicans"
+            },
+            {
+                "score": "118",
+                "name": "Portland Trail Blazers"
+            }
+        ],
+        "new orleans pelicans": "-3",
+        "portland trail blazers": "3"
+    },
+    {
+        "home_team": "dallas mavericks",
+        "away_team": "indiana pacers",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "indiana pacers",
+                "spread": 5.0
+            },
+            {
+                "team": "dallas mavericks",
+                "spread": -5.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "127",
+                "name": "Dallas Mavericks"
+            },
+            {
+                "score": "134",
+                "name": "Indiana Pacers"
+            }
+        ],
+        "dallas mavericks": "-2",
+        "indiana pacers": "2"
+    },
+    {
+        "home_team": "denver nuggets",
+        "away_team": "toronto raptors",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "toronto raptors",
+                "spread": 10.5
+            },
+            {
+                "team": "denver nuggets",
+                "spread": -10.5
+            }
+        ],
+        "scores": [
+            {
+                "score": "121",
+                "name": "Denver Nuggets"
+            },
+            {
+                "score": "119",
+                "name": "Toronto Raptors"
+            }
+        ],
+        "denver nuggets": "-1",
+        "toronto raptors": "1"
+    },
+    {
+        "home_team": "phoenix suns",
+        "away_team": "philadelphia 76ers",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "philadelphia 76ers",
+                "spread": 7.0
+            },
+            {
+                "team": "phoenix suns",
+                "spread": -7.0
+            }
+        ],
+        "scores": [
+            {
+                "score": "118",
+                "name": "Phoenix Suns"
+            },
+            {
+                "score": "116",
+                "name": "Philadelphia 76ers"
+            }
+        ],
+        "phoenix suns": "-1",
+        "philadelphia 76ers": "1"
+    },
+    {
+        "home_team": "los angeles clippers",
+        "away_team": "san antonio spurs",
+        "game_date": "11-04",
+        "spread": [
+            {
+                "team": "san antonio spurs",
+                "spread": 3.5
+            },
+            {
+                "team": "los angeles clippers",
+                "spread": -3.5
+            }
+        ],
+        "scores": [
+            {
+                "score": "113",
+                "name": "Los Angeles Clippers"
+            },
+            {
+                "score": "104",
+                "name": "San Antonio Spurs"
+            }
+        ],
+        "los angeles clippers": "1",
+        "san antonio spurs": "-1"
+    }
+]
