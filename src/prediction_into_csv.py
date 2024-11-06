@@ -19,20 +19,16 @@ NBA_TEAMS = [
 ]
 
 def parse_recommendation(recommendation, home_team, away_team):
-    """Parse recommendation string and return recommended team."""
     if not recommendation or 'PASS' in recommendation.upper():
         return None
         
-    # Handle format "HOME (Team Name)" or "AWAY (Team Name)"
     if '(' in recommendation:
         return recommendation.split('(')[1].strip(')')
     
-    # Handle simple HOME/AWAY format
     if recommendation.upper() == 'HOME':
         return home_team
     elif recommendation.upper() == 'AWAY':
         return away_team
-    
     return None
 
 def process_predictions(json_file_path):
@@ -43,29 +39,23 @@ def process_predictions(json_file_path):
     - '0' for opponent of recommended team
     - 'n/a' for teams not playing or in PASS games
     """
-    # Load JSON data
     with open(json_file_path, 'r') as f:
         data = json.load(f)
     
     date = data['date']
     games = data['games']
     
-    # Initialize all teams as n/a
     team_predictions = {team: 'DNP' for team in NBA_TEAMS}
     
-    # Track teams that played today
     teams_playing = set()
     
-    # Process each game
     for game in games:
         home_team = game['matchup']['home_team']
         away_team = game['matchup']['away_team']
         
-        # Mark these teams as playing today
         teams_playing.add(home_team)
         teams_playing.add(away_team)
         
-        # Check if game has a recommendation
         if 'prediction' in game:
             recommended_team = parse_recommendation(
                 game['prediction']['recommendation'],
@@ -74,19 +64,15 @@ def process_predictions(json_file_path):
             )
             
             if recommended_team:
-                # Set recommended team to 1 and opponent to 0
                 team_predictions[recommended_team] = '1'
                 opponent = away_team if recommended_team == home_team else home_team
                 team_predictions[opponent] = '0'
             else:
-                # If PASS recommendation, both teams get n/a
                 team_predictions[home_team] = 'n/a'
                 team_predictions[away_team] = 'n/a'
     
-    # Update CSV file
     csv_file_path = 'data/csv/live/prediction_tracking.csv'
     
-    # Create backup of existing CSV
     if os.path.exists(csv_file_path):
         backup_path = f'data/csv/backup/prediction_tracking_backup_{date}.csv'
         with open(csv_file_path, 'r') as existing_file:
@@ -94,7 +80,6 @@ def process_predictions(json_file_path):
         with open(backup_path, 'w') as backup_file:
             backup_file.writelines(existing_data)
     
-    # Read existing CSV data
     csv_data = {}
     header = ['Team']
     
@@ -106,22 +91,17 @@ def process_predictions(json_file_path):
                 team_name = row[0]
                 csv_data[team_name] = row[1:]
     
-    # Add new date column if it doesn't exist
     if date not in header[1:]:
         header.append(date)
         for team in csv_data:
             csv_data[team].append('')
     
-    # Update predictions for all teams
     for team in NBA_TEAMS:
         if team not in csv_data:
-            # New team - create empty history
             csv_data[team] = [''] * (len(header) - 2) + [team_predictions[team]]
         else:
-            # Update existing team
             csv_data[team][-1] = team_predictions[team]
     
-    # Write updated CSV
     with open(csv_file_path, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(header)

@@ -1,9 +1,14 @@
 import pandas as pd
 import numpy as np
-import json
 from datetime import datetime
-
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
+from firebase_admin import firestore
+import pandas as pd
+import numpy as np
 # this file is a model that will be used to predict the outcome of NBA games based on the spread. The model will use past rating data from the csv file and pregame data to make predictions. The model will calculate metrics for each team and analyze the matchup to make a recommendation. The model will print the analysis results and save the results to a json file.
+
+db = firestore.client()
 
 def load_and_prepare_data(csv_content, pregame_content):
     try:
@@ -120,12 +125,15 @@ async def model_main():
     with open('data/csv/live/main.csv', 'r') as file:
         csv_data = file.read()
     today_date = datetime.now().strftime("%m-%d")
-    pregame_path = f'data/pregame/{today_date}_pregame.json'  
-    with open(pregame_path, 'r') as file:
-        pregame_data = json.load(file)
+    doc_ref = db.collection('pregame_odds').document(f'{today_date}_pregame')
+    pregame_data = doc_ref.get()
+    if not pregame_data.exists:
+        print("No pregame data available")
+        return
+    pregame_data = pregame_data.to_dict().get('games', [])
+
     results = analyze_todays_games(csv_data, pregame_data)
-    print_analysis(results)
-    json_results = {
+    prediction_results = {
         "date": today_date,
         "analysis_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "games": []
@@ -154,8 +162,8 @@ async def model_main():
                 "confidence": float(result['confidence']),
             }
         }
-        json_results["games"].append(game_result)
-    results_path = f'data/prediction/{today_date}_prediction.json'
-    with open(results_path, 'w') as file:
-        json.dump(json_results, file, indent=4)
-    print(f"\nResults saved to: {results_path}")
+        prediction_results["games"].append(game_result)
+    doc_ref = db.collection('predictions').document(f'{today_date}_prediction')
+    doc_ref.set({"games": prediction_results})
+    # print_analysis(results)
+    print(f"prediction_result saved to Firestore")

@@ -1,14 +1,11 @@
 import asyncio
 from src.main_functions import get_pregame_odds, get_final_score, form_trainingData
-from src.compile_data import compile_data
-from src.trend_model import model_main
+from src.make_predictions import model_main
 from src.prediction_into_csv import main as prediction_into_csv
 from src.evaluation import evaluate_predictions
 
 async def main():
     try:
-        print("Starting the process...")
-        
         print("Getting pregame odds...")
         await get_pregame_odds()
         
@@ -17,14 +14,11 @@ async def main():
         
         print("getting training data...")
         await form_trainingData()
-        
-        print("Compiling data...")
-        await compile_data()
 
         print('making predictions')
         await model_main()
 
-        print("Updating CSV file...")
+        print("Updating prediction CSV file...")
         await prediction_into_csv()
 
         print('yesterdays results ')

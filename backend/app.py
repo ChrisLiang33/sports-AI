@@ -4,6 +4,13 @@ from typing import List, Dict, Optional
 from datetime import datetime, timedelta
 import json
 from fastapi.middleware.cors import CORSMiddleware
+import firebase_admin
+from firebase_admin import credentials, firestore
+
+cred = credentials.Certificate("../serviceAccountKey.json")
+app = firebase_admin.initialize_app(cred)
+db = firestore.client()
+
 app = FastAPI()
 
 app.add_middleware(
@@ -41,16 +48,27 @@ class PredictionResponse(BaseModel):
     analysis_timestamp: str
     games: List[Game]
   
+todays_date = datetime.now().strftime('%m-%d')
+yesterdays_date = (datetime.now() - timedelta(days=1)).strftime('%m-%d')
+
 @app.get('/predictions', response_model=PredictionResponse)
 async def get_predictions():
-   todays_date = datetime.now().strftime('%m-%d')
-   with open(f'../data/prediction/{todays_date}_prediction.json', 'r') as f:
-      data = json.load(f)
-   return data
+    doc_ref = db.collection('predictions').document(f'{todays_date}_prediction')
+    pregame_data = doc_ref.get()
+    if not pregame_data.exists:
+        return {"message": "No pregame available"}
+    pregame_data = pregame_data.to_dict().get('games', [])
+    return pregame_data
 
 @app.get('/yesterday_predictions', response_model=PredictionResponse)
 async def get_yesterday_predictions():
-    yesterdays_date = (datetime.now() - timedelta(days=1)).strftime('%m-%d')
+    # doc_ref = db.collection('predictions').document(f'{yesterdays_date}_prediction')
+    # pregame_data = doc_ref.get()
+    # if not pregame_data.exists:
+    #     return {"message": "No pregame available"}
+    # pregame_data = pregame_data.to_dict().get('games', [])
+    # return pregame_data
+    
     with open(f'../data/prediction/{yesterdays_date}_prediction.json', 'r') as f:
         data = json.load(f)
     return data

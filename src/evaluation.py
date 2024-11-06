@@ -1,6 +1,9 @@
 import pandas as pd
 from datetime import datetime, timedelta
 import json
+from firebase_admin import firestore
+
+db = firestore.client()
 
 async def evaluate_predictions():
     main_df = pd.read_csv('/Users/chrisliang8/Desktop/sports-AI/data/csv/live/main.csv')
@@ -12,9 +15,12 @@ async def evaluate_predictions():
     correct_predictions = 0
     incorrect_predictions = 0
     yesterday_date = (datetime.now() - timedelta(days=1)).strftime("%m-%d")
-    json_path = f"data/prediction/{yesterday_date}_prediction.json"
-    with open(json_path, 'r') as f:
-        prediction_data = json.load(f)
+    doc_ref = db.collection('prediction').document(f'{yesterday_date}_prediction')
+    prediction_data = doc_ref.get()
+    if not prediction_data.exists:
+        print("No yesterday prediction data available")
+        return
+    prediction_data = prediction_data.to_dict().get('games', [])
 
     for idx, row in prediction_df.iterrows():
         team = row['Teams']
@@ -38,30 +44,30 @@ async def evaluate_predictions():
                             break
 
     accuracy = (correct_predictions / total_predictions) * 100 if total_predictions else 0
-    with open(json_path, 'w') as f:
-        json.dump(prediction_data, f, indent=4)
+    doc_ref = db.collection('predictions').document(f'{yesterday_date}_prediction')
+    doc_ref.set({"games": prediction_data})
+    print(f'updated {yesterday_date} predictions with win/loss results')
         
-    results_dict = {
-        'Date': [yesterday_date],
-        'Total_Predictions': [total_predictions],
-        'Correct_Predictions': [correct_predictions],
-        'Incorrect_Predictions': [incorrect_predictions],
-        'Accuracy': [accuracy]
-    }
+    # results_dict = {
+    #     'Date': [yesterday_date],
+    #     'Total_Predictions': [total_predictions],
+    #     'Correct_Predictions': [correct_predictions],
+    #     'Incorrect_Predictions': [incorrect_predictions],
+    #     'Accuracy': [accuracy]
+    # }
 
-    results_df = pd.DataFrame(results_dict)
+    # results_df = pd.DataFrame(results_dict)
 
-    results_path = '/Users/chrisliang8/Desktop/sports-AI/data/csv/live/results.csv'
-    try:
-        existing_results = pd.read_csv(results_path)
-        updated_results = pd.concat([existing_results, results_df], ignore_index=True)
-    except FileNotFoundError:
-        updated_results = results_df
+    # results_path = '/Users/chrisliang8/Desktop/sports-AI/data/csv/live/results.csv'
+    # try:
+    #     existing_results = pd.read_csv(results_path)
+    #     updated_results = pd.concat([existing_results, results_df], ignore_index=True)
+    # except FileNotFoundError:
+    #     updated_results = results_df
 
-    updated_results.to_csv(results_path, index=False)
+    # updated_results.to_csv(results_path, index=False)
 
     print(f"Accuracy: {accuracy}%")
     print(f"Total Predictions: {total_predictions}")
     print(f"Correct Predictions: {correct_predictions}")
     print(f"Incorrect Predictions: {incorrect_predictions}")
-    print(f"\nResults have been saved to: {results_path}")
