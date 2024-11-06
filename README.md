@@ -2,9 +2,7 @@ uvicorn app:app --reload
 npm run dev
 
 to do:
-get_final_score(): done
-get_pregame_odds(): done
-make_predictions(): done
+update the csv to db
 
 form training_data: it should work tomorrow cuz there is 11/6 pregame and 11/6 finalscore by then
 turn it into csv, add relational db later
