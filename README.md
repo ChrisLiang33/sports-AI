@@ -4,10 +4,8 @@ npm run dev
 to do:
 update the csv to db
 
-form training_data: it should work tomorrow cuz there is 11/6 pregame and 11/6 finalscore by then
 turn it into csv, add relational db later
-
-for fastapi, turn it into cloud once yesterdays prediction is up in the cloud
+deploy it
 
 step1:
 get today pregame odds and yesterday final score write into db

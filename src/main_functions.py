@@ -1,11 +1,9 @@
 from dotenv import load_dotenv
-import os, json, requests, csv
+import os, requests, csv
 from datetime import datetime, timedelta
 import firebase_admin
 from firebase_admin import firestore, credentials
 from collections import defaultdict
-import pandas as pd
-import numpy as np
 
 cred = credentials.Certificate("serviceAccountKey.json")
 app = firebase_admin.initialize_app(cred)
@@ -16,8 +14,7 @@ api_key = os.getenv("API_KEY")
 yesterday_date = (datetime.now() - timedelta(days=1)).strftime("%m-%d")
 today_date = datetime.now().strftime("%m-%d")
 
-#use sports odds api to get final scores and write to firebase
-#it gets yesterdays final score
+#use sports odds api to get yesterday final scores and write to firebase
 async def get_final_score():
     url = 'https://api.the-odds-api.com/v4/sports/basketball_nba/scores/'
     params = {
@@ -26,7 +23,6 @@ async def get_final_score():
         'dateFormat': 'iso' 
     }
     response = requests.get(url, params=params)
-
     if response.status_code == 200:
         data = response.json()
         cleaned_data = []
@@ -43,12 +39,11 @@ async def get_final_score():
 
         doc_ref = db.collection('final_score').document(f'{yesterday_date}_finalScore')
         doc_ref.set({"games": cleaned_data})
-        print(f"final score successfully written to Firestore")
+        print(f"final score successfully written to db")
     else:
         print(f"Error: {response.status_code} - {response.text}")
 
 #use sports odds api to get pregame odds and write to firebase
-#its gets todays final score
 async def get_pregame_odds():
     url = 'https://api.the-odds-api.com/v4/sports/basketball_nba/odds/'
     params = {
@@ -59,7 +54,7 @@ async def get_pregame_odds():
     response = requests.get(url, params=params)
     if response.status_code == 200:
         data = response.json()
-        fanduel_odds = []
+        odds = []
         for event in data:
             for bookmaker in event.get("bookmakers", []):
                 if bookmaker["key"] == "fanduel":
@@ -76,18 +71,15 @@ async def get_pregame_odds():
                                     "spread": outcome["point"], 
                                 })
                     if filtered_event["spread"]:
-                        fanduel_odds.append(filtered_event)
+                        odds.append(filtered_event)
         
         doc_ref = db.collection('pregame_odds').document(f'{today_date}_pregame')
-        doc_ref.set({"games": fanduel_odds})
-        print(f"pregame odds successfully written to Firestore")
+        doc_ref.set({"games": odds})
+        print(f"pregame odds successfully written to db")
     else:
         print(f"Error: {response.status_code} - {response.text}")
 
-def normalize_team_name(name):
-    return name.strip().lower()
-
-#this function takes yesterday's pregame odds and yesterdays final scores and determines the rating, combines them to new data and writes to firestore
+#this function takes yesterday's pregame odds and yesterdays final scores and determines the rating, combines them as training data and writes to db
 async def form_trainingData():
     try:
         doc_ref1 = db.collection('pregame_odds').document(f'{yesterday_date}_pregame')
@@ -100,9 +92,8 @@ async def form_trainingData():
         if not scores_data_doc.exists:
             print(f"Final score document for {yesterday_date} does not exist!")
             return
-        if odds_data_doc.exists and scores_data_doc.exists:
-            odds_data = odds_data_doc.to_dict().get('games', [])
-            scores_data = scores_data_doc.to_dict().get('games', [])
+        odds_data = odds_data_doc.to_dict().get('games', [])
+        scores_data = scores_data_doc.to_dict().get('games', [])
     except Exception as e:
         print(f"An error occurred: {e}")
         return
@@ -112,19 +103,16 @@ async def form_trainingData():
     super_weight = 15
 
     for odds in odds_data:
-        home_team = normalize_team_name(odds['home_team'])
-        away_team = normalize_team_name(odds['away_team'])
-
+        home_team = (odds['home_team'])
+        away_team = (odds['away_team'])
         score_entry = next((score for score in scores_data if 
-                            normalize_team_name(score['home_team']) == home_team and 
-                            normalize_team_name(score['away_team']) == away_team), None)
-        
+                            (score['home_team']) == home_team and 
+                            (score['away_team']) == away_team), None)
         if score_entry:
             home_score = int(score_entry['scores'][0]['score'])
             away_score = int(score_entry['scores'][1]['score'])
-
-            home_spread = next(spread['spread'] for spread in odds['spread'] if normalize_team_name(spread['team']) == home_team)
-            away_spread = next(spread['spread'] for spread in odds['spread'] if normalize_team_name(spread['team']) == away_team)
+            home_spread = next(spread['spread'] for spread in odds['spread'] if (spread['team']) == home_team)
+            away_spread = next(spread['spread'] for spread in odds['spread'] if (spread['team']) == away_team)
 
             if abs(home_score + home_spread - away_score) <= 2.5:  
                 home_covered = 'P'
@@ -167,9 +155,8 @@ async def form_trainingData():
      
     doc_ref = db.collection('training_data').document(f'{yesterday_date}_trainingData')
     doc_ref.set({"games": combined_data})
-    print(f"trainingData successfully written to FireStore")
+    print(f"trainingData successfully written to db")
 
-    #now put rating in a csv file
     data = combined_data
     team_coverage = defaultdict(lambda: defaultdict(str))
 
@@ -208,16 +195,9 @@ async def form_trainingData():
     for team, ratings in csv_data.items():
         csv_data_rows.append([team] + ratings)
 
-    backup_file_path = f'data/csv/backup/main_backup_{yesterday_date}.csv'
-    if os.path.exists(csv_file_path):
-        with open(csv_file_path, 'r') as existing_file:
-            existing_data = existing_file.readlines()
-        with open(backup_file_path, 'w') as backup_file:
-            backup_file.writelines(existing_data)
-
     with open(csv_file_path, 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         csv_writer.writerow(header)
         csv_writer.writerows(csv_data_rows)
 
-    print(f"CSV file '{csv_file_path}' updated successfully.")
+    print(f"main CSV updated successfully.")

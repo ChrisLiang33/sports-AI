@@ -134,8 +134,6 @@ async def model_main():
 
     results = analyze_todays_games(csv_data, pregame_data)
     prediction_results = {
-        "date": today_date,
-        "analysis_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "games": []
     }
     for result in results:

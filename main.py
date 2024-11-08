@@ -23,8 +23,6 @@ async def main():
 
         print('yesterdays results ')
         await evaluate_predictions()
-
-        print("Process completed successfully.")
     
     except Exception as e:
         print(f"An error occurred: {e}")
