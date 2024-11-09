@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 import firebase_admin
 from firebase_admin import firestore, credentials
 from collections import defaultdict
+import pandas as pd
 
 load_dotenv()
 cred = credentials.Certificate("/Users/chrisliang8/Desktop/sports-AI/serviceAccountKey.json")
@@ -87,6 +88,8 @@ async def get_pregame_odds():
         print(f"Error: {response.status_code} - {response.text}")
 
 #this function takes yesterday's pregame odds and yesterdays final scores and determines the rating, combines them as training data and writes to db
+
+# write to csv 
 async def form_trainingData():
     try:
         doc_ref1 = db.collection('pregame_odds').document(f'{yesterday_date}_pregame')
@@ -208,3 +211,47 @@ async def form_trainingData():
         csv_writer.writerows(csv_data_rows)
 
     print(f"main CSV updated successfully.")
+
+
+    #write to db
+    csv_path = '/Users/chrisliang8/Desktop/sports-AI/data/csv/live/main.csv'
+    df = pd.read_csv(csv_path)
+    collection_ref = db.collection('main')
+    data_to_write = df.reset_index().to_dict(orient='records')
+    for data in data_to_write:
+        team_name = data['Teams']
+        collection_ref.document(team_name).set(data)
+    print("Data written to Firestore successfully.")
+
+    # read from db
+    docs = collection_ref.get()
+    if len(docs) == 0:
+        print("No documents found in Firestore.")
+    else:
+        print(f"Found {len(docs)} documents in Firestore.")
+        firebase_data = []
+        for doc in docs:
+            firebase_data.append(doc.to_dict())
+    
+        df_from_firebase = pd.DataFrame(firebase_data)
+        if 'Teams' not in df_from_firebase.columns:
+            print("Error: 'Teams' column not found in Firebase data.")
+            print("Firebase Data Columns: ", df_from_firebase.columns)
+        else:
+            if 'index' in df_from_firebase.columns:
+                df_from_firebase = df_from_firebase.drop(columns=['index'])
+            df = df.set_index('Teams')
+            df_from_firebase = df_from_firebase.set_index('Teams')
+            df = df.sort_index()
+            df_from_firebase = df_from_firebase.sort_index()
+            df = df.reindex(sorted(df.columns), axis=1)
+            df_from_firebase = df_from_firebase.reindex(sorted(df_from_firebase.columns), axis=1)
+            df_cleaned = df.fillna("").astype(str)
+            df_from_firebase_cleaned = df_from_firebase.fillna("").astype(str)
+
+            if df_cleaned.equals(df_from_firebase_cleaned):
+                print("Data matches between CSV and Firebase.")
+            else:
+                print("Data mismatch between CSV and Firebase.")
+                print("CSV Data:\n", df.head())
+                print("Firebase Data:\n", df_from_firebase.head())

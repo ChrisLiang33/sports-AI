@@ -1,8 +1,6 @@
-import json
 import csv
 import os
 from datetime import datetime
-from collections import defaultdict
 import firebase_admin
 from firebase_admin import firestore, credentials
 
@@ -24,7 +22,6 @@ NBA_TEAMS = [
 ]
 
 def parse_recommendation(recommendation, home_team, away_team):
-    """ Parse the prediction recommendation and return the team to bet on. """
     if not recommendation or 'PASS' in recommendation.upper():
         return None
         
@@ -38,7 +35,6 @@ def parse_recommendation(recommendation, home_team, away_team):
     return None
 
 def process_predictions():
-    """ Fetch predictions from Firestore and update the CSV tracking file. """
     today_date = datetime.now().strftime("%m-%d")
     doc_ref = db.collection('predictions').document(f'{today_date}_prediction')
     data = doc_ref.get()
@@ -55,7 +51,6 @@ def process_predictions():
     team_predictions = {team: 'DNP' for team in NBA_TEAMS}
     teams_playing = set()
 
-    # Process each game prediction
     for game in games:
         if not isinstance(game, dict):
             print("Unexpected data format for a game entry:", game)
@@ -67,9 +62,7 @@ def process_predictions():
 
         if not home_team or not away_team:
             print("Invalid matchup data:", matchup)
-
             continue
-
         teams_playing.add(home_team)
         teams_playing.add(away_team)
         
@@ -80,7 +73,6 @@ def process_predictions():
                 home_team,
                 away_team
             )
-            
             if recommended_team:
                 team_predictions[recommended_team] = '1'
                 opponent = away_team if recommended_team == home_team else home_team
@@ -89,47 +81,38 @@ def process_predictions():
                 team_predictions[home_team] = 'n/a'
                 team_predictions[away_team] = 'n/a'
     
-    # File path for CSV tracking
     csv_file_path = 'data/csv/live/prediction_tracking.csv'
-    
-    # Read existing CSV file data if it exists
     csv_data = {}
     header = ['Team']
 
     if os.path.exists(csv_file_path):
         with open(csv_file_path, 'r') as csvfile:
             reader = csv.reader(csvfile)
-            header = next(reader)  # Read header row
+            header = next(reader)
             for row in reader:
                 team_name = row[0]
                 csv_data[team_name] = row[1:]
 
-    # Ensure the current date is in the header
     if date not in header:
         header.append(date)
-        # Add an empty column for the new date for all teams in the CSV data
         for team in csv_data:
             csv_data[team].append('')
 
-    # Update predictions for each team
     for team in NBA_TEAMS:
         if team not in csv_data:
             csv_data[team] = [''] * (len(header) - 1) + [team_predictions[team]]
         else:
             csv_data[team][-1] = team_predictions[team]
 
-    # Write the updated data back to the CSV file
     with open(csv_file_path, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(header)  # Write the header
-        sorted_teams = sorted(csv_data.keys())  # Sort teams alphabetically
+        writer.writerow(header)
+        sorted_teams = sorted(csv_data.keys())
         for team in sorted_teams:
             writer.writerow([team] + csv_data[team])
 
     print(f"CSV file '{csv_file_path}' updated successfully.")
     print(f"Teams with recommendations: {sum(1 for v in team_predictions.values() if v == '1')}")
-
-
 
 async def main():
     process_predictions()
