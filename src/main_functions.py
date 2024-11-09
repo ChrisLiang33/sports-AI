@@ -214,8 +214,7 @@ async def form_trainingData():
 
 
     #write to db
-    csv_path = '/Users/chrisliang8/Desktop/sports-AI/data/csv/live/main.csv'
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_file_path)
     collection_ref = db.collection('main')
     data_to_write = df.reset_index().to_dict(orient='records')
     for data in data_to_write:
