@@ -163,5 +163,4 @@ async def model_main():
         prediction_results["games"].append(game_result)
     doc_ref = db.collection('predictions').document(f'{today_date}_prediction')
     doc_ref.set({"games": prediction_results})
-    # print_analysis(results)
     print(f"prediction_result saved to Firestore")

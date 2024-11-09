@@ -15,11 +15,19 @@ async def evaluate_predictions():
     if not prediction_data.exists:
         print("No prediction data available for yesterday in Firestore.")
         return
-    prediction_data = prediction_data.to_dict().get('games')
+
+    # Access the 'games' list within the nested prediction_data dictionary
+    prediction_data = prediction_data.to_dict()
+    games_data = prediction_data.get('games', {}).get('games', [])
+
+    # Ensure we are working with a list of dictionaries
+    if not isinstance(games_data, list):
+        print(f"Unexpected data structure for 'games': {prediction_data} (Expected list of dictionaries)")
+        return
+    
     total_predictions = 0
     correct_predictions = 0
     incorrect_predictions = 0
-    print(prediction_data)
 
     for idx, row in prediction_df.iterrows():
         team = row['Teams']
@@ -44,14 +52,21 @@ async def evaluate_predictions():
                 else:
                     incorrect_predictions += 1
 
-                for game in prediction_data:
-                        if 'matchup' in game and 'prediction' in game and 'away_team' in game['matchup'] and 'home_team' in game['matchup']:
-                            if team in [game["matchup"]["away_team"], game["matchup"]["home_team"]]:
-                                game["prediction"]["result"] = is_correct  
-                                break
-                        else:
-                            print(f"Unexpected data structure in game: {game}")
-    doc_ref.set({"games": prediction_data}, merge=True)  
+                # Update the result in games_data
+                for game in games_data:
+                    if isinstance(game, dict):
+                        matchup = game.get('matchup', {})
+                        prediction = game.get('prediction', {})
+                        away_team = matchup.get('away_team')
+                        home_team = matchup.get('home_team')
+
+                        if away_team and home_team and team in [away_team, home_team]:
+                            prediction['result'] = is_correct
+                            break
+                    else:
+                        print(f"Unexpected data type in game: {game} (Expected dictionary)")
+                        
+    doc_ref.set({"games": {"games": games_data}}, merge=True)  
 
     accuracy = (correct_predictions / total_predictions) * 100 if total_predictions else 0
     print(f"Accuracy: {accuracy}%")

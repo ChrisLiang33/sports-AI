@@ -6,7 +6,6 @@ from collections import defaultdict
 import firebase_admin
 from firebase_admin import firestore, credentials
 
-# Initialize Firebase Admin
 if not firebase_admin._apps:
     cred = credentials.Certificate("path/to/your-firebase-credentials.json")
     firebase_admin.initialize_app(cred)

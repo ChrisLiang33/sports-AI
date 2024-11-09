@@ -9,20 +9,20 @@ async def main():
         print("Getting pregame odds...")
         await get_pregame_odds()
         
-        print("Getting final scores...")
-        await get_final_score()
+        # print("Getting final scores...")
+        # await get_final_score()
         
-        print("getting training data...")
-        await form_trainingData()
+        # print("getting training data...")
+        # await form_trainingData()
 
-        print('making predictions')
-        await model_main()
+        # print('making predictions')
+        # await model_main()
 
-        print("Updating prediction CSV file...")
-        await prediction_into_csv()
+        # print("Updating prediction CSV file...")
+        # await prediction_into_csv()
 
-        print('yesterdays results ')
-        await evaluate_predictions()
+        # print('yesterdays results ')
+        # await evaluate_predictions()
     
     except Exception as e:
         print(f"An error occurred: {e}")

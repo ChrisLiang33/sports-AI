@@ -1,15 +1,15 @@
 from dotenv import load_dotenv
 import os, requests, csv
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import firebase_admin
 from firebase_admin import firestore, credentials
 from collections import defaultdict
 
-cred = credentials.Certificate("serviceAccountKey.json")
+load_dotenv()
+cred = credentials.Certificate("/Users/chrisliang8/Desktop/sports-AI/serviceAccountKey.json")
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-load_dotenv()
 api_key = os.getenv("API_KEY")
 yesterday_date = (datetime.now() - timedelta(days=1)).strftime("%m-%d")
 today_date = datetime.now().strftime("%m-%d")
@@ -56,6 +56,13 @@ async def get_pregame_odds():
         data = response.json()
         odds = []
         for event in data:
+            iso_date = event.get('commence_time')
+            utc_time = datetime.strptime(iso_date, "%Y-%m-%dT%H:%M:%SZ")
+            est_offset = timedelta(hours=-5)
+            est_time = utc_time.replace(tzinfo=timezone.utc).astimezone(timezone(est_offset))
+            formatted_date = est_time.strftime("%m-%d")
+            if formatted_date != today_date:
+                continue
             for bookmaker in event.get("bookmakers", []):
                 if bookmaker["key"] == "fanduel":
                     filtered_event = {
