@@ -9,8 +9,8 @@ import LoadingPage from "./LoadingPage";
 const HomePage = () => {
   const [predictions, setPredictions] = useState(null);
   const [loading, setLoading] = useState(true);
-  web = "https://sports-ai.onrender.com";
-  local = "http://127.0.0.1:8000";
+  const web = "https://sports-ai.onrender.com";
+  const local = "http://127.0.0.1:8000";
   useEffect(() => {
     axios
       .get(`${web}/predictions`)

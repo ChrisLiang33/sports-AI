@@ -8,8 +8,8 @@ import Body from "../components/Body";
 const RecapPage = () => {
   const [predictions, setPredictions] = useState(null);
   const [loading, setLoading] = useState(true);
-  local = "http://127.0.0.1:8000";
-  web = "https://sports-ai.onrender.com";
+  const local = "http://127.0.0.1:8000";
+  const web = "https://sports-ai.onrender.com";
   useEffect(() => {
     axios
       .get(`${web}/yesterday_predictions`)
