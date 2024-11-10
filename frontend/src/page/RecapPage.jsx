@@ -4,6 +4,7 @@ import "../index.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Body from "../components/Body";
+import LoadingPage from "./LoadingPage";
 
 const RecapPage = () => {
   const [predictions, setPredictions] = useState(null);
@@ -23,7 +24,7 @@ const RecapPage = () => {
       });
   }, []);
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingPage />;
   }
   if (!predictions) {
     return <div>Error fetching predictions</div>;
