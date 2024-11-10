@@ -12,7 +12,7 @@ const RecapPage = () => {
   const web = "https://sports-ai.onrender.com";
   useEffect(() => {
     axios
-      .get(`${local}/yesterday_predictions`)
+      .get(`${web}/yesterday_predictions`)
       .then((response) => {
         setPredictions(response.data);
         setLoading(false);
