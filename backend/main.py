@@ -8,16 +8,16 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 # Get the JSON string from the environment variable
-# firebase_credentials_json = os.getenv("serviceAccountKey")
-# cred_dict = json.loads(firebase_credentials_json)
-# cred = credentials.Certificate(cred_dict)
-# app = firebase_admin.initialize_app(cred)
-# db = firestore.client()
-
-# old
-cred = credentials.Certificate("../serviceAccountKey.json")
+firebase_credentials_json = os.getenv("serviceAccountKey")
+cred_dict = json.loads(firebase_credentials_json)
+cred = credentials.Certificate(cred_dict)
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
+
+# old
+# cred = credentials.Certificate("../serviceAccountKey.json")
+# app = firebase_admin.initialize_app(cred)
+# db = firestore.client()
 
 app = FastAPI()
 
@@ -52,8 +52,6 @@ class Game(BaseModel):
     prediction: Prediction
 
 class PredictionResponse(BaseModel):
-    # date: str
-    # analysis_timestamp: str
     games: List[Game]
   
 todays_date = datetime.now().strftime('%m-%d')
