@@ -1,6 +1,7 @@
 import pandas as pd
 from datetime import datetime, timedelta
 from firebase_admin import firestore
+import numpy as np
 
 db = firestore.client()
 
@@ -42,8 +43,8 @@ async def evaluate_predictions():
                 if performance_value in ['p', 'P']:
                     performance_value = 1
                 else:
-                    performance_value = int(performance_value)
-
+                    if not np.isnan(performance_value):
+                        performance_value = int(performance_value)
                 total_predictions += 1
                 is_correct = performance_value in ['0', '1', 'p', 'P', '2', '3', 1, 2, 3, -1]
                 

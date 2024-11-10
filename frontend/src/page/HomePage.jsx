@@ -13,7 +13,7 @@ const HomePage = () => {
   const local = "http://127.0.0.1:8000";
   useEffect(() => {
     axios
-      .get(`${web}/predictions`)
+      .get(`${local}/predictions`)
       .then((response) => {
         setPredictions(response.data);
         setLoading(false);
