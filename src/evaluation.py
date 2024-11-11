@@ -36,18 +36,25 @@ async def evaluate_predictions():
 
         if pd.notna(prediction) and str(prediction) == '1':
             team_performance = main_df.loc[main_df['Teams'] == team, yesterday_date].values
-            
+
             if len(team_performance) > 0:
                 performance_value = team_performance[0]
                 
-                if performance_value in ['p', 'P']:
+                # Convert performance_value to a numeric type if possible, and handle 'p' as a special case
+                if isinstance(performance_value, str) and performance_value.lower() == 'p':
                     performance_value = 1
                 else:
-                    if not np.isnan(performance_value):
-                        performance_value = int(performance_value)
-                total_predictions += 1
-                is_correct = performance_value in ['0', '1', 'p', 'P', '2', '3', 1, 2, 3, -1]
+                    try:
+                        performance_value = float(performance_value)
+                        if not np.isnan(performance_value):
+                            performance_value = int(performance_value)
+                    except (ValueError, TypeError):
+                        print(f"Unexpected performance value type: {performance_value} (Expected numeric or 'p')")
+                        continue  # Skip to the next row if type conversion fails
                 
+                total_predictions += 1
+                is_correct = performance_value in ['0', '1', 1, 2, 3, -1]
+
                 if is_correct:
                     correct_predictions += 1
                 else:
