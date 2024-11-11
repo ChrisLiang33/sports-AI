@@ -8,16 +8,22 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 # Get the JSON string from the environment variable
-# firebase_credentials_json = os.getenv("serviceAccountKey")
-# cred_dict = json.loads(firebase_credentials_json)
-# cred = credentials.Certificate(cred_dict)
-# app = firebase_admin.initialize_app(cred)
-# db = firestore.client()
+firebase_credentials_json = os.getenv("serviceAccountKey")
+cred_dict = json.loads(firebase_credentials_json)
+
+try:
+    cred = credentials.Certificate(cred_dict)
+    app = firebase_admin.initialize_app(cred)
+    db = firestore.client()
+    print("Firebase initialized successfully")
+except Exception as e:
+    print("Error initializing Firebase:", e)
+
 
 # old
-cred = credentials.Certificate("../serviceAccountKey.json")
-app = firebase_admin.initialize_app(cred)
-db = firestore.client()
+# cred = credentials.Certificate("../serviceAccountKey.json")
+# app = firebase_admin.initialize_app(cred)
+# db = firestore.client()
 
 app = FastAPI()
 
