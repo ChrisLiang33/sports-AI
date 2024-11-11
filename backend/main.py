@@ -29,10 +29,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://sports-ai.onrender.com"],
+    allow_origins=["https://sports-ai-nine.vercel.app"],  # Vercel domain
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allow all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
 class TeamMetrics(BaseModel):
